@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student and Bank Details</title>
+</head>
+<body>
+    <h1>Student Details with Bank Information</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Age</th>
+                <th>Course</th>
+                <th>Bank Name</th>
+                <th>Account Number</th>
+                <th>IFSC Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.course }}</td>
+                <td>{{ student.bank.bank_name }}</td>
+                <td>{{ student.bank.account_number }}</td>
+                <td>{{ student.bank.ifsc_code }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
